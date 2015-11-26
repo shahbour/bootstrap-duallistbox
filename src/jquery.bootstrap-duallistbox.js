@@ -685,6 +685,20 @@
     getContainer: function() {
       return this.container;
     },
+    getSelect1Values: function() {
+      var values = [];
+      this.elements.select1.children().each(function () {
+        values.push(JSON.parse(this.value));
+      });
+      return values;
+    },
+    getSelect2Values: function() {
+      var values = [];
+      this.elements.select2.children().each(function () {
+        values.push(JSON.parse(this.value));
+      });
+      return values;
+    },
     refresh: function(mustClearSelections) {
       updateSelectionStates(this);
 

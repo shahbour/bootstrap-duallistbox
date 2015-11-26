@@ -682,6 +682,18 @@
         }
         return this.element;
     },
+    addOption: function (value,text,selected,refresh) {
+      if (selected) {
+        this.element.append("<option value='"+JSON.stringify(value)+"' selected>"+ text +"</option>");
+      }
+      else {
+        this.element.append("<option value='"+JSON.stringify(value)+"' >"+ text +"</option>");
+      }
+
+      if (refresh) {
+        refreshSelects(this);
+      }
+    },
     getContainer: function() {
       return this.container;
     },
